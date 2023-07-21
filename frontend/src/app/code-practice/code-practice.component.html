@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Code Practice Area</h2>
+  
+  
+    <div class="typing-container">
+      <pre id="code" [innerHTML]="currentCode" [ngClass]="{'error': !isCompleted, 'success': isCompleted}"></pre>
+      <input type="text" id="typingInput" [(ngModel)]="typedText" (input)="checkTypingProgress()">
+      <p id="result" [ngClass]="{'success': isCompleted, 'error': !isCompleted}">
+        {{ isCompleted ? 'Completed!' : 'Keep typing...' }}
+      </p>
+  
+      <div class="button-container">
+        <button id="restartButton" (click)="getNextSnippet()">Next Code</button>
+        <a class="more-options-link" href="/">Back to Home</a>
+      </div>
+  
+      <div id="timer">{{ timerSeconds }}</div>
+    </div>
+  </div>
+  
